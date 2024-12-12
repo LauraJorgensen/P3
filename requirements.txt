@@ -3,4 +3,3 @@ scipy
 matplotlib  
 control
 sympy         
-pandas
