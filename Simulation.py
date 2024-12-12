@@ -110,11 +110,11 @@ u_3 = calculate_input(state_3, K_matrix(Q,R))
 
 # Create plots 
 def plot_og_print(K):
-    create_plot('Time [s]', 'Displacement [m]', [time_1, time_2, time_3], [state_1[0], state_2[0], state_3[0]], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-0.42,0.42], guidelines=[d_maks, -d_maks])
-    create_plot('Time [s]', 'Angle [rad]', [time_1, time_2, time_3],[state_1[1], state_2[1], state_3[1]], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-np.pi/6, np.pi/6])
-    create_plot('Time [s]', 'Velocity [m/s]', [time_1, time_2, time_3], [state_1[2], state_2[2], state_3[2]],labels=['$x_1$', '$x_2$', '$x_3$'],  y_limits=[-2.5, 1.5]) 
-    create_plot('Time [s]', 'Angular velocity [rad/s]', [time_1, time_2, time_3],[state_1[3], state_2[3], state_3[3]], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-6, 4]) 
-    create_plot('Time [s]', 'Current [A]', [time_1, time_2, time_3],[u_1, u_2, u_3], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-85, 85], guidelines=[i_maks, -i_maks])
+    create_plot_sim('Time [s]', 'Displacement [m]', [time_1, time_2, time_3], [state_1[0], state_2[0], state_3[0]], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-0.42,0.42], guidelines=[d_maks, -d_maks])
+    create_plot_sim('Time [s]', 'Angle [rad]', [time_1, time_2, time_3],[state_1[1], state_2[1], state_3[1]], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-np.pi/6, np.pi/6])
+    create_plot_sim('Time [s]', 'Velocity [m/s]', [time_1, time_2, time_3], [state_1[2], state_2[2], state_3[2]],labels=['$x_1$', '$x_2$', '$x_3$'],  y_limits=[-2.5, 1.5]) 
+    create_plot_sim('Time [s]', 'Angular velocity [rad/s]', [time_1, time_2, time_3],[state_1[3], state_2[3], state_3[3]], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-6, 4]) 
+    create_plot_sim('Time [s]', 'Current [A]', [time_1, time_2, time_3],[u_1, u_2, u_3], labels=['$x_1$', '$x_2$', '$x_3$'], y_limits=[-85, 85], guidelines=[i_maks, -i_maks])
     
     K = K.reshape(1, 4)
     print('Feedback gain: K =',K,'\nEigenvalues of (A+BK):',np.linalg.eigvals(A + B @ K))
